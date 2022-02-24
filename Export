@@ -1,0 +1,7 @@
+import requests
+
+url = 'https://raw.githubusercontent.com/Princekrampah/DataCleaning/master/datasets/housing.csv'
+res = requests.get(url, allow_redirects=True)
+with open('housing.csv','wb') as file:
+    file.write(res.content)
+housing = pd.read_csv('housing.csv')
